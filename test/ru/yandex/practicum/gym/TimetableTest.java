@@ -156,12 +156,13 @@ public class TimetableTest {
         Assertions.assertNotNull(findPetrov);
     }
 
-    private CounterOfTrainings findCoach (List<CounterOfTrainings> list, Coach coach) {
-        for(CounterOfTrainings findCoach : list){
-            if(findCoach.getCoach().equals(coach)){
+    private CounterOfTrainings findCoach(List<CounterOfTrainings> list, Coach coach) {
+        for (CounterOfTrainings findCoach : list) {
+            if (findCoach.getCoach().equals(coach)) {
                 return findCoach;
             }
-        } return  null;
+        }
+        return null;
     }
 
 }
