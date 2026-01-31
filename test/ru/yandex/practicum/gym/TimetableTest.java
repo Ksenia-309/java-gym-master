@@ -87,16 +87,16 @@ public class TimetableTest {
         Group group = new Group("Акробатика для детей", Age.CHILD, 60);
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
         TrainingSession singleTrainingSession = new TrainingSession(group, coach,
-                DayOfWeek.MONDAY, new TimeOfDay(13, 0));
+                DayOfWeek.MONDAY, new TimeOfDay(12, 0));
 
         timetable.addNewTrainingSession(singleTrainingSession);
 
-        //Проверить, что за понедельник в 13:00 вернулось одно занятие
+        //Проверить, что за понедельник в 12:00 вернулось одно занятие
         TreeMap<TimeOfDay, List<TrainingSession>> trainingSessionsForMonday =
                 timetable.getTrainingSessionsForDay(DayOfWeek.MONDAY);
-        Assertions.assertTrue(trainingSessionsForMonday.containsKey(new TimeOfDay(13, 0)));
+        Assertions.assertTrue(trainingSessionsForMonday.containsKey(new TimeOfDay(12, 0)));
 
-        List<TrainingSession> sessionsOnMonday = trainingSessionsForMonday.get(new TimeOfDay(13, 0));
+        List<TrainingSession> sessionsOnMonday = trainingSessionsForMonday.get(new TimeOfDay(12, 0));
         Assertions.assertEquals(1, sessionsOnMonday.size());
 
         //Проверить, что за понедельник в 14:00 не вернулось занятий
