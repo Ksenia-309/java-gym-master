@@ -1,15 +1,22 @@
 package ru.yandex.practicum.gym;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
 public class TimetableTest {
 
+    private Timetable timetable;
+
+    @BeforeEach
+    void setUp() {
+        Timetable.clearTimetable();
+    }
+
     @Test
     void testGetTrainingSessionsForDaySingleSession() {
-        Timetable timetable = new Timetable();
 
         Group group = new Group("Акробатика для детей", Age.CHILD, 60);
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
@@ -35,7 +42,6 @@ public class TimetableTest {
 
     @Test
     void testGetTrainingSessionsForDayMultipleSessions() {
-        Timetable timetable = new Timetable();
 
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
 
@@ -82,7 +88,6 @@ public class TimetableTest {
 
     @Test
     void testGetTrainingSessionsForDayAndTime() {
-        Timetable timetable = new Timetable();
 
         Group group = new Group("Акробатика для детей", Age.CHILD, 60);
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
@@ -108,7 +113,6 @@ public class TimetableTest {
 
     @Test
     void testGetCountByCoaches() {
-        Timetable timetable = new Timetable();
 
         Coach coach = new Coach("Иванов", "Иван", "Иванович");
 

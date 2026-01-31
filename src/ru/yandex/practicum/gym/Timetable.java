@@ -151,7 +151,7 @@ public class Timetable {
 
     }
 
-    static void addNewTrainingSession(TrainingSession trainingSession) {
+     static void addNewTrainingSession(TrainingSession trainingSession) {
         //сохраняем занятие в расписании
         DayOfWeek dayOfWeek = trainingSession.getDayOfWeek();
         TimeOfDay timeOfDay = trainingSession.getTimeOfDay();
@@ -172,7 +172,7 @@ public class Timetable {
 
     }
 
-    static TreeMap<TimeOfDay, List<TrainingSession>> getTrainingSessionsForDay(DayOfWeek dayOfWeek) {
+     static TreeMap<TimeOfDay, List<TrainingSession>> getTrainingSessionsForDay(DayOfWeek dayOfWeek) {
         if (!timetable.containsKey(dayOfWeek)) {
             System.out.println("На выбранный день тренировок нет. ");
             return timetable.getOrDefault(dayOfWeek, new TreeMap<>());
@@ -182,7 +182,7 @@ public class Timetable {
         }
     }
 
-    static List<TrainingSession> getTrainingSessionsForDayAndTime(DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
+     static List<TrainingSession> getTrainingSessionsForDayAndTime(DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
 
         Map<TimeOfDay, List<TrainingSession>> daySchedule = timetable.get(dayOfWeek);
         if (daySchedule == null) {
@@ -199,7 +199,7 @@ public class Timetable {
         return timeSchedule;
     }
 
-    static List<CounterOfTrainings> getCountByCoaches() {
+     static List<CounterOfTrainings> getCountByCoaches() {
         Map<Coach, Integer> coachTrainingsCount = new HashMap<>();
 
         for (TreeMap<TimeOfDay, List<TrainingSession>> daySchedule : timetable.values()) {
@@ -222,6 +222,9 @@ public class Timetable {
         System.out.println(sum);
         return sum;
 
+    }
+    public static void clearTimetable() {
+        timetable.clear();
     }
 
 }
