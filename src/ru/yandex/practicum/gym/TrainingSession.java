@@ -11,15 +11,21 @@ public class TrainingSession {
     //время начала занятия
     private TimeOfDay timeOfDay;
 
+    @Override
+    public String toString() {
+        return "TrainingSession{" +
+                "group=" + group +
+                ", coach=" + coach +
+                ", dayOfWeek=" + dayOfWeek +
+                ", timeOfDay=" + timeOfDay +
+                '}';
+    }
+
     public TrainingSession(Group group, Coach coach, DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
         this.group = group;
         this.coach = coach;
         this.dayOfWeek = dayOfWeek;
         this.timeOfDay = timeOfDay;
-    }
-
-    public Group getGroup() {
-        return group;
     }
 
     public Coach getCoach() {

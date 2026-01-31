@@ -11,6 +11,15 @@ public class Coach {
     //отчество
     private String middleName;
 
+    @Override
+    public String toString() {
+        return "Coach{" +
+                "surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", middleName='" + middleName + '\'' +
+                '}';
+    }
+
     public Coach(String surname, String name, String middleName) {
         this.surname = surname;
         this.name = name;
